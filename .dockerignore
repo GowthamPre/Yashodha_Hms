@@ -1,0 +1,26 @@
+# Ignore local dependencies
+/vendor
+/node_modules
+
+# Ignore environment files
+.env
+.env.*.local
+
+# Ignore logs and caches
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Ignore testing files
+.phpunit.result.cache
+
+# Ignore version control
+.git
+.gitignore
+
+# Ignore OS/IDE junk
+.DS_Store
+.idea
+.vscode
