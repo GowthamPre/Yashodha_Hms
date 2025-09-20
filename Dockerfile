@@ -11,15 +11,20 @@ COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-# Copy composer files first
+# Copy composer files first for caching
 COPY composer.json composer.lock ./
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction
+# Install only dependency metadata (no autoload yet)
+RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-interaction
 
-# Copy app
+# Copy the rest of the application
 COPY . .
 
+# Now dump autoloads properly (app/ is available)
+RUN composer dump-autoload --optimize
+
+# Expose port 8000
 EXPOSE 8000
 
+# Run Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
