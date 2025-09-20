@@ -1,0 +1,79 @@
+# Laravel & PHP
+/vendor
+/storage/*.key
+/storage/media-library/**/*
+/public/storage
+/public/hot
+/.env
+/.env.backup
+/.phpunit.result.cache
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+
+# Node / Frontend
+/node_modules
+npm-debug.log
+yarn-error.log
+*.cache
+
+# IDE & OS
+/.idea
+/.vscode
+.DS_Store
+
+# Build Artifacts
+/public/mix-manifest.json
+
+# Optional: Keep design scripts out, but allow gitkeep
+# /public/css/*
+# !/public/css/.gitkeep
+# /public/js/core/*
+# !/public/js/core/.gitkeep
+# /public/js/*.js*
+# !/public/js/.gitkeep
+# /public/js/iqonic-script/*.min.js*
+# !/public/js/iqonic-script/.gitkeep
+# !/public/js/setting-init.js
+# /public/modules/**/*
+# !/public/modules/.gitkeep
+
+
+
+# node_modules
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# .env
+# .env.backup
+# .phpunit.result.cache
+# Homestead.json
+# Homestead.yaml
+# npm-debug.log
+# yarn-error.log
+# /.idea
+# /.vscode
+# *.cache
+# .DS_Store
+
+
+# Below Comments For Design Style & Scripts
+# /public/css/*
+# !/public/css/.gitkeep
+# /public/js/core/*
+# !/public/js/core/.gitkeep
+
+# /public/js/*.js*
+# !/public/js/.gitkeep
+
+# /public/js/iqonic-script/*.min.js*
+# !/public/js/iqonic-script/.gitkeep
+# !/public/js/setting-init.js
+
+# /public/modules/**/*
+# !/public/modules/.gitkeep
+# /public/mix-manifest.json
+# node_modules
+# node_modules
+# /storage/media-library/**/*
