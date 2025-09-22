@@ -4,7 +4,7 @@ FROM php:8.2-fpm
 RUN apt-get update && apt-get install -y \
     git curl unzip libpng-dev libjpeg-dev libfreetype6-dev libonig-dev libzip-dev zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip tokenizer
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # Install Composer
 COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
@@ -14,7 +14,7 @@ WORKDIR /var/www
 # Copy composer files first for caching
 COPY composer.json composer.lock ./
 
-# Install only dependency metadata (no autoload yet)
+# Install dependencies (without dev for production)
 RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-interaction
 
 # Copy the rest of the application
